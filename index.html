@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hub de Estudos — BRSAO278 · AWS re/Start</title>
+<style>
+  :root{--bg:#0f1420;--card:#1a2233;--card2:#222c42;--txt:#e8ecf4;--mut:#9aa5bd;--acc:#f7981f;--acc2:#4fc3f7;--ok:#4caf7d;--brd:#2c3850}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.55;padding:24px;max-width:980px;margin:0 auto}
+  h1{font-size:1.5rem;margin-bottom:4px}
+  h1 span{color:var(--acc)}
+  .sub{color:var(--mut);font-size:.9rem;margin-bottom:20px}
+  .bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+  .btn{background:var(--card2);border:1px solid var(--brd);color:var(--txt);padding:7px 14px;border-radius:8px;text-decoration:none;font-size:.85rem;transition:.15s}
+  .btn:hover{border-color:var(--acc);color:var(--acc)}
+  .fase{background:var(--card);border:1px solid var(--brd);border-radius:12px;padding:18px 20px;margin-bottom:16px}
+  .fase.atual{border-color:var(--acc)}
+  .fhead{display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none}
+  .fhead h2{font-size:1.05rem}
+  .tag{font-size:.7rem;padding:3px 10px;border-radius:99px;background:var(--card2);color:var(--mut);white-space:nowrap;margin-left:10px}
+  .tag.atual{background:var(--acc);color:#111;font-weight:700}
+  .fbody{margin-top:14px;display:none}
+  .fase.open .fbody{display:block}
+  .fase h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--acc2);margin:14px 0 6px}
+  ul{list-style:none}
+  li{padding:4px 0;font-size:.9rem;color:#cdd5e5}
+  li::before{content:'·';color:var(--acc2);margin-right:8px}
+  .task{display:flex;gap:10px;align-items:flex-start;padding:5px 0;font-size:.9rem;cursor:pointer}
+  .task input{margin-top:4px;accent-color:var(--ok);cursor:pointer}
+  .task.done span{color:var(--mut);text-decoration:line-through}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .hint{background:var(--card2);border-left:3px solid var(--acc);padding:8px 12px;border-radius:0 8px 8px 0;font-size:.85rem;color:var(--mut);margin-top:10px}
+  .hint b{color:var(--txt)}
+  footer{margin-top:24px;font-size:.8rem;color:var(--mut);text-align:center}
+</style>
+</head>
+<body>
+<h1>Hub de Estudos <span>BRSAO278</span> · AWS re/Start → Cloud Practitioner</h1>
+<p class="sub">Revisão do zero em 7 fases · Datas-limite: <b>11/jan</b> checkpoint · <b>01/mar</b> fecha Canvas · <b>09/mar</b> simulado</p>
+
+<div class="bar">
+  <a class="btn" href="https://awsrestart.instructure.com/courses/4725" target="_blank">Canvas (labs/KCs)</a>
+  <a class="btn" href="https://classroom.google.com/c/ODg4MzMzMjIwOTM5" target="_blank">Google Classroom</a>
+  <a class="btn" href="https://airtable.com/appCM8ieZ9a98g6eu/shr8f4t8HnoQp6KDy/tbl3sk0HHiKVwIvqh" target="_blank">Calendário</a>
+  <a class="btn" href="https://github.com/erickandregarcia-ai/estudos-brsao278" target="_blank">Repo GitHub</a>
+  <a class="btn" href="mailto:victor.romario@escoladanuvem.org">E-mail instrutor</a>
+  <a class="btn" href="https://skillbuilder.aws" target="_blank">AWS SkillBuilder</a>
+</div>
+
+<!-- ============ FASE 0 ============ -->
+<div class="fase atual open">
+  <div class="fhead"><h2>Fase 0 — Fundamentos</h2><span class="tag atual">AGORA · 09–15/nov</span></div>
+  <div class="fbody">
+    <h3>Conteúdo</h3>
+    <ul><li>Hardware × software · armazenamento · VMs e containers · intro a redes · IP/protocolos · terminal · SSH</li>
+    <li>Vídeos: aulas gravadas Nivelamento 1–6 (06–14/out) no Classroom</li></ul>
+    <h3>Missão da semana — VM + SSH (marque ao concluir)</h3>
+    <div id="t0">
+      <label class="task"><input type="checkbox" data-k="f0a"><span>Baixar e instalar VirtualBox</span></label>
+      <label class="task"><input type="checkbox" data-k="f0b"><span>Baixar ISO do Ubuntu Server</span></label>
+      <label class="task"><input type="checkbox" data-k="f0c"><span>Criar VM no VirtualBox (2GB RAM, 20GB disco) e instalar Ubuntu</span></label>
+      <label class="task"><input type="checkbox" data-k="f0d"><span>Descobrir o IP da VM (comando <b>ip a</b>)</span></label>
+      <label class="task"><input type="checkbox" data-k="f0e"><span>Do Windows: abrir PowerShell → <b>ssh usuario@IP-da-VM</b></span></label>
+      <label class="task"><input type="checkbox" data-k="f0f"><span>Dentro da VM: criar pasta, arquivo, editar com nano, dar ping no PC</span></label>
+    </div>
+    <h3>Recursos gratuitos</h3>
+    <div class="links">
+      <a class="btn" href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox</a>
+      <a class="btn" href="https://ubuntu.com/download/server" target="_blank">Ubuntu Server</a>
+      <a class="btn" href="https://www.youtube.com/results?search_query=curso+em+video+redes+de+computadores+guanabara" target="_blank">Curso em Vídeo: Redes</a>
+      <a class="btn" href="https://www.youtube.com/results?search_query=curso+em+video+linux+guanabara" target="_blank">Curso em Vídeo: Linux</a>
+      <a class="btn" href="https://www.youtube.com/results?search_query=linuxtips+docker+para+iniciantes" target="_blank">LINUXtips: Docker</a>
+      <a class="btn" href="https://docs.docker.com/get-started/" target="_blank">Docker Get Started</a>
+      <a class="btn" href="https://www.youtube.com/results?search_query=virtualbox+instalar+ubuntu+server+passo+a+passo" target="_blank">Tutorial: VM no VirtualBox</a>
+    </div>
+    <div class="hint"><b>Travou?</b> Busque o erro no Google copiando a mensagem exata. Rede da VM não conecta → confira se o adaptador está em "Placa em modo Bridge" ou "NAT".</div>
+  </div>
+</div>
+
+<!-- ============ FASE 1 ============ -->
+<div class="fase">
+  <div class="fhead"><h2>Fase 1 — Cloud Foundations</h2><span class="tag">16–29/nov</span></div>
+  <div class="fbody">
+    <h3>Canvas</h3>
+    <ul><li>KCs 2–12, 208–209 · Lab 11 EC2 (refazer na 3ª passada)</li></ul>
+    <h3>Missão</h3>
+    <div>
+      <label class="task"><input type="checkbox" data-k="f1a"><span>Desenhar no papel: Região → AZ → VPC → sub-rede → EC2 → S3 (e explicar em voz alta)</span></label>
+      <label class="task"><input type="checkbox" data-k="f1b"><span>Criar e destruir EC2 no sandbox sem consultar instruções</span></label>
+    </div>
+    <h3>Recursos gratuitos</h3>
+    <div class="links">
+      <a class="btn" href="https://skillbuilder.aws/search?searchText=cloud%20practitioner%20essentials" target="_blank">SkillBuilder: CCP Essentials (PT)</a>
+      <a class="btn" href="https://aws.amazon.com/free/" target="_blank">AWS Free Tier</a>
+      <a class="btn" href="https://docs.aws.amazon.com/pt_br/ec2/" target="_blank">Docs EC2 (PT)</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FASE 2 ============ -->
+<div class="fase">
+  <div class="fhead"><h2>Fase 2 — Redes (módulo atual da turma)</h2><span class="tag">30/nov–20/dez</span></div>
+  <div class="fbody">
+    <h3>Canvas</h3>
+    <ul><li>KCs 254–260 · Labs 261–267 (refazer 261 solo · fazer 262–267)</li></ul>
+    <h3>Missão</h3>
+    <div>
+      <label class="task"><input type="checkbox" data-k="f2a"><span>Lab 267 (VPC + servidor web) na 3ª passada — lab-chave do módulo</span></label>
+      <label class="task"><input type="checkbox" data-k="f2b"><span>Tabela própria de portas: 22, 80, 443, 3389, 53, 21, 25...</span></label>
+      <label class="task"><input type="checkbox" data-k="f2c"><span>10 exercícios de CIDR/sub-rede por dia até automatizar</span></label>
+    </div>
+    <h3>Recursos gratuitos</h3>
+    <div class="links">
+      <a class="btn" href="https://www.skillsforall.com/" target="_blank">Cisco Packet Tracer (Skills for All)</a>
+      <a class="btn" href="https://www.netacad.com/" target="_blank">NetAcad</a>
+      <a class="btn" href="https://www.youtube.com/results?search_query=subnet+ipv4+exercicios+resolvidos+portugues" target="_blank">Exercícios de sub-rede</a>
+      <a class="btn" href="https://www.youtube.com/results?search_query=tcp+udp+portas+explicado+portugues" target="_blank">TCP/UDP e portas</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FASE 3 ============ -->
+<div class="fase">
+  <div class="fhead"><h2>Fase 3 — Linux</h2><span class="tag">05–18/jan · checkpoint 11/jan</span></div>
+  <div class="fbody">
+    <h3>Canvas</h3>
+    <ul><li>Labs 225–253 (14 labs) · KCs 226–252 · Desafio 253</li></ul>
+    <h3>Missão</h3>
+    <div>
+      <label class="task"><input type="checkbox" data-k="f3a"><span>15 min/dia de terminal na VM Ubuntu criada na Fase 0</span></label>
+      <label class="task"><input type="checkbox" data-k="f3b"><span>OverTheWire Bandit — passar dos níveis 0–10</span></label>
+    </div>
+    <h3>Recursos gratuitos</h3>
+    <div class="links">
+      <a class="btn" href="https://overthewire.org/wargames/bandit/" target="_blank">OverTheWire: Bandit</a>
+      <a class="btn" href="https://linuxjourney.com/" target="_blank">Linux Journey</a>
+      <a class="btn" href="https://www.youtube.com/results?search_query=comandos+linux+essenciais+portugues" target="_blank">Comandos essenciais</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FASE 4 ============ -->
+<div class="fase">
+  <div class="fhead"><h2>Fase 4 — Segurança · Python · Bancos de dados</h2><span class="tag">19/jan–14/fev</span></div>
+  <div class="fbody">
+    <h3>Canvas</h3>
+    <ul><li>Segurança: labs 276–281, KCs 282–298 · Python: labs 108–141, KCs 117–138 · BD: labs 160–275, KCs 299–309</li></ul>
+    <h3>Recursos gratuitos</h3>
+    <div class="links">
+      <a class="btn" href="https://www.youtube.com/results?search_query=curso+em+video+python+mundo+1" target="_blank">Curso em Vídeo: Python</a>
+      <a class="btn" href="https://www.beecrowd.com.br/" target="_blank">beecrowd (exercícios)</a>
+      <a class="btn" href="https://sqlbolt.com/" target="_blank">SQLBolt (SQL interativo)</a>
+      <a class="btn" href="https://skillbuilder.aws/search?searchText=security" target="_blank">SkillBuilder: Segurança</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FASE 5 ============ -->
+<div class="fase">
+  <div class="fhead"><h2>Fase 5 — Labs JAWS + IA → fecha Canvas</h2><span class="tag">15/fev–01/mar</span></div>
+  <div class="fbody">
+    <h3>Canvas</h3>
+    <ul><li>Labs JAWS 168–192 · KCs 167, 210–220 · Módulo IA (aulas 23/fev–01/mar) · Lab 316 SageMaker</li></ul>
+    <h3>Recursos gratuitos</h3>
+    <div class="links">
+      <a class="btn" href="https://skillbuilder.aws/" target="_blank">Trilhas SkillBuilder de IA (links no Canvas)</a>
+      <a class="btn" href="https://www.youtube.com/results?search_query=cloudformation+template+exemplo+ec2" target="_blank">CloudFormation na prática</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FASE 6 ============ -->
+<div class="fase">
+  <div class="fhead"><h2>Fase 6 — Certificação CLF-C02</h2><span class="tag">03–09/mar revisão+simulado</span></div>
+  <div class="fbody">
+    <h3>Canvas</h3>
+    <ul><li>KCs CERT 195–207 · Domain Reviews 1–4 (SkillBuilder) · Official Practice Question Set</li></ul>
+    <h3>Missão</h3>
+    <div>
+      <label class="task"><input type="checkbox" data-k="f6a"><span>Refazer todos os KCs com nota &lt; 80%</span></label>
+      <label class="task"><input type="checkbox" data-k="f6b"><span>Simulado como exame real: 65 questões, 90 min, cronometrado</span></label>
+    </div>
+    <h3>Recursos gratuitos</h3>
+    <div class="links">
+      <a class="btn" href="https://www.youtube.com/results?search_query=exampro+aws+cloud+practitioner+clf-c02" target="_blank">ExamPro CCP (curso gratuito)</a>
+      <a class="btn" href="https://www.youtube.com/results?search_query=cloud+practitioner+clf-c02+questoes+comentadas" target="_blank">Questões comentadas</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Plantão técnico: quarta 8h–9h e 18h–19h · Empregabilidade: ter/qua 12h e 16h, sex 10h/13h/17h30<br>
+  Método dos labs: guiada → semi-guiada → solo. Se não sai sozinho, ainda não aprendeu.
+</footer>
+
+<script>
+  // toggle fases
+  document.querySelectorAll('.fhead').forEach(h=>h.addEventListener('click',()=>h.parentElement.classList.toggle('open')));
+  // persistir checkboxes
+  document.querySelectorAll('input[type=checkbox][data-k]').forEach(cb=>{
+    const k='brsao278-'+cb.dataset.k;
+    cb.checked=localStorage.getItem(k)==='1';
+    const upd=()=>cb.closest('.task').classList.toggle('done',cb.checked);
+    upd();
+    cb.addEventListener('change',()=>{localStorage.setItem(k,cb.checked?'1':'0');upd();});
+  });
+</script>
+</body>
+</html>
